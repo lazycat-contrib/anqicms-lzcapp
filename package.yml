@@ -1,0 +1,18 @@
+package: community.lazycat.app.anqicms
+name: AnQiCMS
+version: 0.0.0
+description: "Enterprise content management system: multi-site, multi-language publishing with SEO tooling."
+min_os_version: "1.5.0"
+homepage: https://www.anqicms.com/
+author: kandaoni.com
+license: AGPL-3.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: 安企CMS
+    description: "企业级内容管理系统：多站点、多语言内容发布，内置 SEO 工具。"
+  en:
+    name: AnQiCMS
+    description: "Enterprise content management system: multi-site, multi-language publishing with SEO tooling."
