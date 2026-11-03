@@ -1,6 +1,9 @@
 application:
   subdomain: anqicms
   multi_instance: false
+  # AnQiCMS has its own admin login.
+  public_path:
+    - /
   upstreams:
     - location: /package-licenses/
       backend: file:///lzcapp/pkg/content/licenses/
@@ -35,7 +38,8 @@ usage: |
   - 上游镜像里预置了一个 admin/123456 的默认账号，只在"数据库已连接但没有管理员"
     这种非向导路径下才会生成。**本包走的是安装向导，用的就是你填的密码。**
     如果你发现后台能直接被 admin/123456 登录进去，说明向导没走完，请立刻改密码。
-  - 应用经懒猫入口鉴权访问。
+  - 应用直接对外开放，由 AnQiCMS 自己的后台登录页鉴权（未登录只能看到前台页面）：
+    自带账号体系的服务再套一层平台鉴权会导致重复登录，所以用 public_path。
 
   说明：
   - 单容器 + 内置 SQLite，不需要额外数据库。
